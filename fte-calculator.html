@@ -560,7 +560,7 @@
 
         <div class="standard-row">
           <span class="standard-key">FTE standard</span>
-          <span class="standard-val">1,560 hrs / year</span>
+          <span class="standard-val">2,080 hrs / year</span>
         </div>
         <div class="standard-row">
           <span class="standard-key">Working days / year</span>
@@ -568,7 +568,7 @@
         </div>
         <div class="standard-row">
           <span class="standard-key">Hours per working day</span>
-          <span class="standard-val">6 hrs (360 min)</span>
+          <span class="standard-val">8 hrs (480 min)</span>
         </div>
         <div class="standard-row">
           <span class="standard-key">Holiday exclusion</span>
@@ -607,7 +607,7 @@
         <div class="form-output">
           <div class="form-row">
             <span class="form-row-label">Time per occurrence (min)</span>
-            <span class="form-row-val" id="fo-time">360</span>
+            <span class="form-row-val" id="fo-time">480</span>
           </div>
           <div class="form-row">
             <span class="form-row-label">Number of occurrences</span>
@@ -619,7 +619,7 @@
 
     <!-- FORMULA BAR -->
     <div class="formula-bar" id="formula-bar">
-      <span>FTE = Working Days × 360 min ÷ 60 ÷ 1,560</span>
+      <span>FTE = Working Days × 480 min ÷ 60 ÷ 2,080</span>
     </div>
 
   </div>
@@ -630,7 +630,7 @@
       <div class="info-tile-icon">
         <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8 8 0 0 1-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z"/></svg>
       </div>
-      <div class="info-tile-val">1,560</div>
+      <div class="info-tile-val">2,080</div>
       <div class="info-tile-lbl">Hours = 1 FTE</div>
     </div>
     <div class="info-tile">
@@ -644,13 +644,13 @@
       <div class="info-tile-icon">
         <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
-      <div class="info-tile-val">360</div>
+      <div class="info-tile-val">480</div>
       <div class="info-tile-lbl">Min per Occurrence</div>
     </div>
   </div>
 
   <div style="margin-top: 16px; background: var(--white); border: 1px solid var(--border); border-left: 3px solid var(--green); border-radius: var(--radius-sm); padding: 14px 18px; font-size: 12.5px; color: var(--slate);">
-    <strong style="color: var(--green-deep);">Important:</strong> Use the <em>occurrences</em> value in field #11 of the CI Intake Form. Field #10 (time per occurrence) is always <strong>360</strong>. For a full-year vacancy starting January 2, use 260 occurrences.
+    <strong style="color: var(--green-deep);">Important:</strong> Use the <em>occurrences</em> value in field #11 of the CI Intake Form. Field #10 (time per occurrence) is always <strong>480</strong>. For a full-year vacancy starting January 2, use 260 occurrences.
   </div>
 
 </div>
@@ -708,8 +708,8 @@
     if (vac > fy) return;
 
     const days = countWorkingDays(vac, fy);
-    const hours = days * 6;
-    const fte = hours / 1560;
+    const hours = days * 8;
+    const fte = hours / 2080;
     const pct = Math.min(fte, 1);
 
     // Arc
@@ -763,8 +763,8 @@
     bar.innerHTML = `
       <span class="val">${days}</span>
       <span class="formula-sep">days ×</span>
-      <span class="val">360</span>
-      <span class="formula-sep">min ÷ 60 ÷ 1,560 =</span>
+      <span class="val">480</span>
+      <span class="formula-sep">min ÷ 60 ÷ 2,080 =</span>
       <span class="val">${fte.toFixed(2)} FTE</span>
       <span class="formula-sep">(${hours.toLocaleString()} hrs)</span>
     `;
